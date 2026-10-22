@@ -77,7 +77,7 @@ jobs:
 
       - name: Deploy SAM template
         if: ${{ steps.sam-build.conclusion == 'success' }}
-        uses:  govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
+        uses: govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
         with:
             artifact-bucket-name: ${{ vars[format('{0}_CORE_ARTIFACT_SOURCE_BUCKET_NAME', matrix.target)] }}
             signing-profile-name: ${{ vars[format('{0}_CORE_SIGNING_PROFILE_NAME', matrix.target)] }}
@@ -154,7 +154,7 @@ jobs:
 
       - name: Deploy SAM template
         if: ${{ steps.sam-build.conclusion == 'success' }}
-        uses:  govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
+        uses: govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
         with:
           artifact-bucket-name: ${{ vars[format('{0}_CORE_ARTIFACT_SOURCE_BUCKET_NAME', matrix.target)] }}
           signing-profile-name: ${{ vars[format('{0}_CORE_SIGNING_PROFILE_NAME', matrix.target)] }}

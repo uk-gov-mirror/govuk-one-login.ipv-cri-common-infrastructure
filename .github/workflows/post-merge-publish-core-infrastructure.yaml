@@ -90,7 +90,7 @@ jobs:
 
       - name: Assume temporary AWS role
         if: matrix.ENABLED == 'true'
-        uses:  aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           role-to-assume: ${{ matrix.GH_ACTIONS_ROLE_ARN_VAR && vars[matrix.GH_ACTIONS_ROLE_ARN_VAR] || secrets[matrix.GH_ACTIONS_ROLE_ARN_SECRET] }}
           aws-region: ${{ env.AWS_REGION }}
@@ -107,7 +107,7 @@ jobs:
 
       - name: Deploy SAM template
         if: matrix.ENABLED == 'true'
-        uses:  govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
+        uses: govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
         with:
             artifact-bucket-name: ${{ matrix.ARTIFACT_SOURCE_BUCKET_NAME_VAR && vars[matrix.ARTIFACT_SOURCE_BUCKET_NAME_VAR] || secrets[matrix.ARTIFACT_SOURCE_BUCKET_NAME_SECRET] }}
             signing-profile-name: ${{ vars[format('{0}_CORE_SIGNING_PROFILE_NAME', matrix.target)] }}
@@ -197,7 +197,7 @@ jobs:
 
       - name: Assume temporary AWS role
         if: matrix.ENABLED == 'true'
-        uses:  aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           role-to-assume: ${{ matrix.GH_ACTIONS_ROLE_ARN_VAR && vars[matrix.GH_ACTIONS_ROLE_ARN_VAR] || secrets[matrix.GH_ACTIONS_ROLE_ARN_SECRET] }}
           aws-region: ${{ env.AWS_REGION }}
@@ -214,7 +214,7 @@ jobs:
 
       - name: Deploy SAM template
         if: matrix.ENABLED == 'true'
-        uses:  govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
+        uses: govuk-one-login/devplatform-upload-action/sam@7076683de6e38a0ecdfbcd273b510a47c7b9489c # v4.4.0
         with:
             artifact-bucket-name: ${{ matrix.ARTIFACT_SOURCE_BUCKET_NAME_VAR && vars[matrix.ARTIFACT_SOURCE_BUCKET_NAME_VAR] || secrets[matrix.ARTIFACT_SOURCE_BUCKET_NAME_SECRET] }}
             signing-profile-name: ${{ vars[format('{0}_CORE_SIGNING_PROFILE_NAME', matrix.target)] }}
